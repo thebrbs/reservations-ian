@@ -1,14 +1,14 @@
+DROP DATABASE IF EXISTS global_bookings;
 
-DROP DATABASE IF EXISTS globalBookings;
+CREATE DATABASE global_bookings;
 
-CREATE DATABASE globalBookings;
+USE global_bookings;
 
-USE globalBookings;
-
-CREATE TABLE bookings( 
-	id int AUTO INCREMENT,
-	partySize int NOT NULL,
-	date date,
-	time varchar(50) NOT NULL,
-	restaurant_id int NOT NULL, 
+CREATE TABLE bookings ( 
+	id INT AUTO_INCREMENT,
+	party_size INT NOT NULL,
+	save_date DATE,
+	table_time VARCHAR(50) NOT NULL,
+	restaurant_id INT NOT NULL,
+	PRIMARY KEY(id)
 );
