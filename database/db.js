@@ -1,9 +1,9 @@
-// connect to db
+// All this file does is write to DB.
 var sample = require('./exampleData.js'); //sample data.
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-	host: 'localhost',
+	host: 'localhost:3009',
 	user: 'root',
 	database: 'global_bookings',
 });

@@ -4,6 +4,8 @@ CREATE DATABASE global_bookings;
 
 USE global_bookings;
 
+DROP TABLE IF EXISTS bookings;
+
 CREATE TABLE bookings ( 
 	id INT AUTO_INCREMENT,
 	party_size INT NOT NULL,
