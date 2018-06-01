@@ -8,8 +8,8 @@ var connection = mysql.createConnection({
 	database: 'globalBookings',
 });
 var randomRest = () => { //gen num from 1-100.
-	min = 1;
-	max = 100;
+	min = 1; 
+	max = 100; 
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } 
 var randomTime = () => { ////gen random index. 0 - 47. Time

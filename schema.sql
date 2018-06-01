@@ -10,5 +10,6 @@ CREATE TABLE bookings(
 	partySize int NOT NULL,
 	date date,
 	time varchar(50) NOT NULL,
-	restaurant_id int NOT NULL,
+	restaurant_id int NOT NULL, 
 );
+ 
