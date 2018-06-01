@@ -12,4 +12,3 @@ CREATE TABLE bookings(
 	time varchar(50) NOT NULL,
 	restaurant_id int NOT NULL, 
 );
- 

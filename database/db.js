@@ -7,21 +7,14 @@ var connection = mysql.createConnection({
 	user: 'root',
 	database: 'globalBookings',
 });
-var randomRest = () => { //gen num from 1-100.
-	min = 1; 
-	max = 100; 
+var randomRest = (min, max) => { //gen num from minn to max 
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } 
-var randomTime = () => { ////gen random index. 0 - 47. Time
-	min = 0;
-	max = 47;
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 var injectData = () => {
 	var q = 'INSERT INTO bookings (partySize, date, time, restaurant_id) VALUES (?, ?, ?, ?)';
-	for (var i = 0; i < sample.data.length; i++) { //Insert 500 random datasets into table bookings. (REFER TO SCHEMA IF NEEDED).
-		connection.query(q, [sample.data.partySize[i], sample.data.date[i], time[randomTime(), randomRest()], function(err, results, body) {
+	for (var i = 0; i < sample.data.length; i++) { //Insert 700 random datasets into table bookings. (REFER TO SCHEMA IF NEEDED).
+		connection.query(q, [sample.data.partySize[i], sample.data.date[i], time[randomRest(0,47)], randomRest(1,100)], function(err, results, body) {
 			if (err) {
 				console.log("ERR in db.js database", err);
 			} else {
