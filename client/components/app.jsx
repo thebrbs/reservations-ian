@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PartySize from './partySize.jsx';
 
 class App extends React.Component { 
 	constructor(props) {
@@ -19,7 +20,9 @@ class App extends React.Component {
 	}
 	render () {
 		return (
-			<div> App renders </div>
+			<div id="reserveBox">
+				<PartySize />
+			</div>
 		) 
 	}
 }
