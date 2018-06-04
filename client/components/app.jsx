@@ -20,8 +20,18 @@ class App extends React.Component {
 	}
 	render () {
 		return (
-			<div id="reserveBox">
-				<PartySize />
+			<div id="appBox">
+				<div id="reserveBox">
+					<h3 id="title">Make a reservation</h3>
+					<div id="partySize">
+						<PartySize />
+					</div>
+				</div>
+				<div id="dateSelect">
+					<div id="date">
+
+					</div>
+				</div>
 			</div>
 		) 
 	}
