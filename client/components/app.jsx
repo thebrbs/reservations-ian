@@ -10,7 +10,7 @@ class App extends React.Component {
 		this.state = {
 			restaurantId: '',
 		}
-	}
+	} 
 	getInfo () {
 		axios.get('/restaurant/:restaurant_id')
 			.then(function(reponse) {

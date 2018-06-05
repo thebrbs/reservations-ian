@@ -13,7 +13,7 @@ class Time extends React.Component {
 					'6:00 pm', '6:30 pm', '7:00 pm', '7:30 pm', '8:00 pm',
 					'8:30 pm', '9:00 pm', '9:30 pm', '10:00 pm', '10:30 pm',
 					'11:00 pm'
-			],	
+			],	 
 		}
 	}
 	render () {

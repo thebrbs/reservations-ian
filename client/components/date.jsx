@@ -10,7 +10,7 @@ class Date extends React.Component {
 	render () {
 		return (
 			<input type="date" id="calendar"></input>
-		)
+		) 
 	}
 }
 
