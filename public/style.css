@@ -8,49 +8,51 @@
   font-family: "Arial Black", Gadget, sans-serif;
 }
 #appBox {
-	float: right;
-	border: 1px solid #dcd6d6;
-	width: 100%;
+  float: right;
+  border: 1px solid #dcd6d6;
+  width: 100%;
 }
 
 .opts {
-	width: 100%;
+  width: 100%;
   background: rgba(0,0,0,0);
   color: solid black;
 }
 
 #partySize {
-	margin-top: 0px;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-right: 0px;
   margin-left: 0px;
-	padding-top: 0px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #dcd6d6;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dcd6d6;
 }
  
 #PartySize {
-	Border: none;
+  Border: none;
 }
 
 #dateTitle, #timeTitle {
-	display: inline;
+  display: inline;
 }
 
 #calendar, #time{
-	display: inline;
+  display: inline;
 }
 
 #calendar {
-	padding-right: 30%;
+  padding-right: 30%;
 }
+
 #time {
-	padding-right: 30%;
+  padding-right: 30%;
 }
+
 #dateTitle {
-	padding-right: 50%;
+  padding-right: 50%;
 }
 
 #timeTitle {
-	padding-right: 50%;
+  padding-right: 50%;
 }
