@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import PartySize from './partySize.jsx';
+import Date from './date.jsx';
+import Time from './time.jsx';
 
 class App extends React.Component { 
 	constructor(props) {
@@ -27,10 +29,11 @@ class App extends React.Component {
 						<PartySize />
 					</div>
 				</div>
-				<div id="dateSelect">
-					<div id="date">
-
-					</div>
+				<div id="headers">
+					<div id="dateTitle">Date</div>
+					<div id="timeTitle">Time</div>
+					<Date />
+					<Time />
 				</div>
 			</div>
 		) 
