@@ -10,25 +10,17 @@ var time = [
   '8:30 pm', '9:00 pm', '9:30 pm', '10:00 pm', '10:30 pm',
   '11:00 pm'
 ];
-class Time extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      time: "",	 
-    }
-  }
-  render () {
-    return (
-      <div id="time">
-        <select>
-          {time.map((time, id) => (
-            <option key={id}>{time}</option>
-            )
-          )}
-        </select>
-      </div>
-    );
-  }
+let Time = (props) => {
+  return (
+    <div id="time">
+      <select onChange={props.timeChange} >
+        {time.map((time, id) => (
+          <option key={id}>{time}</option>
+          )
+        )}
+      </select>
+    </div>
+  );
 }
 
 export default Time;
