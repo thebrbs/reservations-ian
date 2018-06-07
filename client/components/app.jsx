@@ -52,16 +52,22 @@ class App extends React.Component {
             <PartySize partyChange={this.partySizeChange.bind(this)} />
           </div>
         </div>
-        <div id="headers">
-        <div id="dateTitle">Date</div>
-          <div id="timeTitle">Time</div>
+        <div className="row rounded">
+          <div className="col-xs-6">Date</div>
+          <div className="col-xs-6">Time</div>
+          <div className="col-xs-6">
             <Date dateChange={this.dateChange.bind(this)} />
+          </div>
+          <div className="col-xs-6">
             <Time timeChange={this.timeChange.bind(this)} />
           </div>
-          <button onClick={this.findTable.bind(this)} >Find a Table</button>
-          <div>
+        </div>
+        <div className="buttStyle">
+          <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
+        </div>
+        <div>
             <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} time={this.state.time} />
-          </div>
+        </div>
       </div>
     ) 
   }
