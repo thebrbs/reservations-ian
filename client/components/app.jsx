@@ -12,7 +12,7 @@ class App extends React.Component {
       restaurantId: 1001,
       timeSlots: [],
       partySize: 2,
-      date: "",
+      date: "2018-05-31",
       time: "",
       pickTime: "",
       clicked: false,

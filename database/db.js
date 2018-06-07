@@ -23,4 +23,5 @@ let postTimeSlot = (rest_id, date, time, cb) => {
     }
   });
 }
+
 module.exports.grabTimeSlots = grabTimeSlots;
