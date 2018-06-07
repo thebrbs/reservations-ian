@@ -3,24 +3,28 @@ import axios from 'axios';
 import PartySize from './partySize.jsx';
 import Date from './date.jsx';
 import Time from './time.jsx';
+import SlotMaker from './slotMaker.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurantId: 1001,
+      timeSlots: [],
       partySize: 2,
       date: "",
-      time: ""
+      time: "",
+      pickTime: "",
+      clicked: false,
     }
   } 
   findTable () {
-    console.log('clickity clackity')
     var context = this; 
-    axios.get('/restaurant/' + this.state.restaurantId)
+    axios.get('/restaurant/' + this.state.restaurantId + '/' + this.state.date)
       .then(function(response) {
         context.setState({
-          restaurantId: response
+          timeSlots: response.data,
+          clicked: true,
         })
       }); 	
   }
@@ -55,6 +59,9 @@ class App extends React.Component {
             <Time timeChange={this.timeChange.bind(this)} />
           </div>
           <button onClick={this.findTable.bind(this)} >Find a Table</button>
+          <div>
+            <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} time={this.state.time} />
+          </div>
       </div>
     ) 
   }
