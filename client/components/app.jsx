@@ -13,7 +13,7 @@ class App extends React.Component {
       timeSlots: [],
       partySize: 2,
       date: "2018-05-31",
-      time: "",
+      time: "5:00 am",
       pickTime: "",
       clicked: false,
     }

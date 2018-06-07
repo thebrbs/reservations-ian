@@ -14,17 +14,19 @@ let SlotMaker = (props) => {
   let timeAvail = [];
   let notAvail = [];
   let timeObjArray = props.timeSlots;
+  let idxOfPick = time.findIndex(pick => pick === props.time);
+  let j = idxOfPick;
   if (props.clicked === true) {
     for (var i = 0; i < timeObjArray.length; i++) {
       notAvail.push(timeObjArray[i].time);
     }
-    let idxOfPick = time.findIndex(pick => pick === props.time);
     for (var i = idxOfPick; i < idxOfPick + 5; i++) {
       if (!notAvail.includes(time[i]) && time[i] !== undefined) {
         timeAvail.push(time[i]);
       }
-      if (!notAvail.includes(time[idxOfPick-i]) && time[i] !== undefined) {
-        timeAvail.push(time[i]);
+      j--;
+      if (!notAvail.includes(time[j]) && time[j] !== undefined) {
+        timeAvail.unshift(time[j]);
       }
     }
   }
