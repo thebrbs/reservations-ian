@@ -1,12 +1,6 @@
-var path = require('path');
-var express = require('express');
+const app = require('./app.js')
 
-var app = express();
+const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../public')));
-app.get('/restaurant/:restaurant_id', function(req, res) {
-  res.send(req.params);
-}); 
-
-app.listen(3000);
+app.listen(port);
 

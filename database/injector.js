@@ -22,7 +22,7 @@ var time =
 ];
 var q = 'INSERT INTO bookings (party_size, date, time, restaurant_id) VALUES (?, ?, ?, ?)';
 for (var i = 0; i < sample.data.length; i++) {
-	connection.query(q, [sample.data[i].partySize, sample.data[i].date, time[randomNum(0,35)], randomNum(1,100)], function(err, results) {
+	connection.query(q, [sample.data[i].partySize, sample.data[i].date, time[randomNum(0,35)], randomNum(1001,1100)], function(err, results) {
 		if (err) {
 			console.log("ERR entry " + i + " with " + sample.data[i].partySize, sample.data[i].date, err);
 		}
