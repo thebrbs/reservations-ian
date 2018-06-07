@@ -25,8 +25,8 @@ class App extends React.Component {
         context.setState({
           timeSlots: response.data,
           clicked: true,
-        })
-      }); 	
+        });
+      });
   }
   partySizeChange (event) {
     this.setState({
