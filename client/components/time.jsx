@@ -10,7 +10,7 @@ const time = [
   '8:30 pm', '9:00 pm', '9:30 pm', '10:00 pm', '10:30 pm',
   '11:00 pm'
 ];
-let Time = (props) => {
+const Time = (props) => {
   return (
     <div id="time">
       <select onChange={props.timeChange} >
