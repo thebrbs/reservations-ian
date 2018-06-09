@@ -43,7 +43,7 @@ class SlotMaker extends React.Component {
     }
     return (
       this.state.timeAvail.map((entry, id)=> (
-          <button value={entry} key={id}>{entry}</button>
+          <button id="timeButt" className="btn btn-danger" value={entry} key={id}>{entry}</button>
         )
       )
     )

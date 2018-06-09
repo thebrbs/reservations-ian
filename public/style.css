@@ -33,6 +33,8 @@
   display: inline-block;
 }
 
+#calendar {}
+
 #partyD {
   border-bottom: 1px solid #dcd6d6;
   padding-bottom: 10px;
@@ -43,12 +45,13 @@
 #for {
   position: relative;
   top: 20px;
-  left: 5px;
+  left: 0px;
+  pointer-events: none;
 }
 
 #arrow {
   position: relative;
-  right: -93%;
+  right: -90%;
   top: 23px;
   pointer-events: none;
 }
@@ -57,9 +60,20 @@
   margin-left: 15px;
 }
 
+#dateTitle{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#timeTitle {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 #PartySize {
   Border: none;
   margin-left: 10px;
+  outline: none;
 }
 
 .buttStyle {
@@ -75,13 +89,22 @@
   width: 288px;
   height: 48px;
   background-color: #da3743;
+  border-radius: 0;
 }
 
 #findButt:hover {
   background: #b7222d;
 }
+#timeButt {
+  background-color: #da3743;
+  border-radius: 0;
+}
+
+#timeButt:hover {
+  background: #b7222d;
+}
 
 #time {
   padding-left: 0px;
-
+  top: 2px;
 }

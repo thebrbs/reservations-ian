@@ -11,7 +11,7 @@ const PartySize =(props) => {
         <div id="partyD">
           <select onChange={props.partyChange} className="opts" id="PartySize">
           {partySize.map((size, id) => (
-            <option value={size} key={id} >&#160;&#160;&#160;&#160;&#160;&#160;&#160;{size}</option>
+            <option value={size} key={id} >&#160;&#160;&#160;&#160;&#160;{size}</option>
             )
           )}
           </select>

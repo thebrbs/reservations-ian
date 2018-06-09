@@ -45,27 +45,27 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div id="component" className="col-md-4 col-xs-10">
+      <div id="component" className="col-lg-5 col-md-5 col-xs-10">
         <div className="row">
           <h4 id="title">Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />
         </div>
         <div className="row">
-          <div className="col-md-4 col-xs-4">Date</div>
-          <div className="col-md-4 col-xs-4">Time</div>        
+          <div id="dateTitle" className="col-lg-5 col-md-5 col-xs-5">Date</div>
+          <div id="timeTitle" className="col-lg-5 col-md-5 col-xs-5">Time</div>        
         </div>
         <div className="row">
-          <div className="col-md-4 col-xs-4">
+          <div className="col-lg-5 col-md-5 col-xs-5 date">
             <Date dateChange={this.dateChange.bind(this)} />
           </div>
-          <div className="col-md-4 col-xs-4">
+          <div className="col-lg-5col-md-5 col-xs-5 time">
             <Time timeChange={this.timeChange.bind(this)} />
           </div>
         </div>
         <div className="buttStyle">
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
-        <div>
+        <div className="row">
             <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} time={this.state.time} />
         </div>
       </div>
