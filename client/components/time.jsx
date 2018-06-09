@@ -12,7 +12,7 @@ const time = [
 ];
 const Time = (props) => {
   return (
-    <div id="time">
+    <div id="time" className="col-md-2">
       <select onChange={props.timeChange} >
         {time.map((time, id) => (
           <option key={id}>{time}</option>

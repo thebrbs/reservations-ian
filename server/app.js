@@ -14,6 +14,6 @@ app.get('/restaurant/:restaurant_id/:date', function(req, res) {
   db.grabTimeSlots(req.params.restaurant_id, req.params.date, function(data) {
     res.send(data);
   });
-}); 
+});  
 
 module.exports = app;

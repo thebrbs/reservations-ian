@@ -45,20 +45,20 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div id="appBox">
-        <div id="reserveBox">
-          <h3 id="title">Make a reservation</h3>
-          <div id="partySize">
-            <PartySize partyChange={this.partySizeChange.bind(this)} />
-          </div>
+      <div id="component" className="col-md-4 col-xs-10">
+        <div className="row">
+          <h4 id="title">Make a reservation</h4>
+          <PartySize partyChange={this.partySizeChange.bind(this)} />
         </div>
-        <div className="row rounded">
-          <div className="col-xs-6">Date</div>
-          <div className="col-xs-6">Time</div>
-          <div className="col-xs-6">
+        <div className="row">
+          <div className="col-md-4 col-xs-4">Date</div>
+          <div className="col-md-4 col-xs-4">Time</div>        
+        </div>
+        <div className="row">
+          <div className="col-md-4 col-xs-4">
             <Date dateChange={this.dateChange.bind(this)} />
           </div>
-          <div className="col-xs-6">
+          <div className="col-md-4 col-xs-4">
             <Time timeChange={this.timeChange.bind(this)} />
           </div>
         </div>
