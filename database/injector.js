@@ -11,18 +11,18 @@ var randomNum = (min, max) => {
 };
 var time = 
 [
-	'5:00 am', '5:30 am', '6:00 am', '6:30 am', '7:00 am',
-	'7:30 am', '8:00 am', '8:30 am', '9:00 am', '9:30 am',
-	'10:00 am', '10:30 am', '11:00 am', '11:30 am', '12:00pm',
-	'1:00 pm', '1:30 pm', '2:00 pm', '2:30 pm', '3:00 pm',
-	'3:30 pm', '4:00 pm', '4:30 pm','5:00 pm', '5:30 pm',
-	'6:00 pm', '6:30 pm', '7:00 pm', '7:30 pm', '8:00 pm',
-	'8:30 pm', '9:00 pm', '9:30 pm', '10:00 pm', '10:30 pm',
-	'11:00 pm'
+	'5:00 AM', '5:30 AM', '6:00 AM', '6:30 AM', '7:00 AM',
+	'7:30 AM', '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM',
+	'10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00PM',
+	'1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM',
+	'3:30 PM', '4:00 PM', '4:30 PM','5:00 PM', '5:30 PM',
+	'6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM',
+	'8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM',
+	'11:00 PM', 
 ];
-var q = 'INSERT INTO bookings (party_size, date, time, restaurant_id) VALUES (?, ?, ?, ?)';
+var q = 'INSERT INTO bookings (party_size, date, party_size_max, time, restaurant_id) VALUES (?, ?, ?, ?, ?)';
 for (var i = 0; i < sample.data.length; i++) {
-	connection.query(q, [sample.data[i].partySize, sample.data[i].date, time[randomNum(0,35)], randomNum(1001,1100)], function(err, results) {
+	connection.query(q, [sample.data[i].partySize, sample.data[i].date, randomNum(5,15), time[randomNum(0,35)], randomNum(1001,1100)], function(err, results) {
 		if (err) {
 			console.log("ERR entry " + i + " with " + sample.data[i].partySize, sample.data[i].date, err);
 		}

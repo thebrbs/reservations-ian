@@ -9,15 +9,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: 1001,
+      restaurantId: 1001, 
       timeSlots: [],
       partySize: 2,
+      partySizeMax: 15,
       date: "2018-05-31",
-      time: "5:00 am",
+      time: "5:00 PM",
       pickTime: "",
       clicked: false,
     }
-  } 
+  }
+  componentDidMount() {
+    var context = this;
+    axios.get('/restaurant/1001/' + this.state.date)
+      .then(function(response) {
+        context.setState({
+          timeSlots: response.data,
+          partySizeMax: response.data.party_size_max,
+        });
+      });
+  }
   findTable () {
     var context = this; 
     axios.get('/restaurant/' + this.state.restaurantId + '/' + this.state.date)
@@ -56,17 +67,17 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-lg-5 col-md-5 col-xs-5 date">
-            <Date dateChange={this.dateChange.bind(this)} />
+            <Date date={this.state.date} dateChange={this.dateChange.bind(this)} />
           </div>
-          <div className="col-lg-5col-md-5 col-xs-5 time">
-            <Time timeChange={this.timeChange.bind(this)} />
+          <div className="col-lg-5 col-md-5 col-xs-5 time">
+            <Time time={this.state.time} timeChange={this.timeChange.bind(this)} />
           </div>
         </div>
         <div className="buttStyle">
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
-        <div className="row">
-            <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} time={this.state.time} />
+        <div id="slots" className="row">
+            <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} partySize={this.state.partySize} time={this.state.time} partySizeMax={this.state.partySizeMax} />
         </div>
       </div>
     ) 

@@ -33,7 +33,28 @@
   display: inline-block;
 }
 
-#calendar {}
+#timeSelect {
+  border: none;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  width: 95%;
+  background: rgba(0,0,0,0);
+  -webkit-appearance: none;
+}
+
+#time {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dcd6d6;
+}
 
 #partyD {
   border-bottom: 1px solid #dcd6d6;
@@ -98,12 +119,20 @@
 #timeButt {
   background-color: #da3743;
   border-radius: 0;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
 #timeButt:hover {
   background: #b7222d;
 }
 
+#slots {
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
 #time {
   padding-left: 0px;
   top: 2px;

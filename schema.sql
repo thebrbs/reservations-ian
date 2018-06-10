@@ -10,6 +10,7 @@ CREATE TABLE bookings (
 	id INT AUTO_INCREMENT,
 	party_size INT NOT NULL,
 	date DATE,
+  party_size_max INT NOT NULL,
 	time VARCHAR(50) NOT NULL,
 	restaurant_id INT NOT NULL,
 	PRIMARY KEY(id)
