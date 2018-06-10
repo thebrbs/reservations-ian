@@ -28,7 +28,7 @@ class SlotMaker extends React.Component {
         <div className="jumbotron"></div>
       )
     }
-    if (this.props.clicked && this.state.counterClick !== this.props.timeSlots) {
+    if (this.props.isClicked && this.state.counterClick !== this.props.timeSlots) {
       for (var i = 0; i < timeObjArray.length; i++) {
         notAvail.push(timeObjArray[i].time);
       }

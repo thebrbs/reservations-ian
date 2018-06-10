@@ -16,7 +16,7 @@ class App extends React.Component {
       date: "2018-05-31",
       time: "5:00 PM",
       pickTime: "",
-      clicked: false,
+      isClicked: false,
     }
   }   
   componentDidMount() {
@@ -32,7 +32,7 @@ class App extends React.Component {
       .then((response) => {
         this.setState({
           timeSlots: response.data,
-          clicked: true,
+          isClicked: true,
         });
       });
   }
@@ -74,7 +74,7 @@ class App extends React.Component {
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
         <div id="slots" className="row">
-            <SlotMaker clicked={this.state.clicked} timeSlots={this.state.timeSlots} partySize={this.state.partySize} time={this.state.time} partySizeMax={this.state.partySizeMax} />
+            <SlotMaker isClicked={this.state.isClicked} timeSlots={this.state.timeSlots} partySize={this.state.partySize} time={this.state.time} partySizeMax={this.state.partySizeMax} />
         </div>
       </div>
     ) 
