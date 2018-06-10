@@ -20,19 +20,17 @@ class App extends React.Component {
     }
   }   
   componentDidMount() {
-    var context = this;
     axios.get('/restaurant/1001/' + this.state.date)
-      .then(function(response) {
-        context.setState({
+      .then((response) => {
+        this.setState({
           timeSlots: response.data,
         });
       });
   }
   findTable () {
-    var context = this; 
-    axios.get('/restaurant/' + this.state.restaurantId + '/' + this.state.date)
-      .then(function(response) {
-        context.setState({
+      axios.get(`/restaurant/${this.state.restaurantId}/${this.state.date}`)
+      .then((response) => {
+        this.setState({
           timeSlots: response.data,
           clicked: true,
         });
@@ -55,7 +53,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div id="component" className="col-lg-5 col-md-5 col-xs-10">
+      <div id="reserveContainer" className="col-lg-5 col-md-5 col-xs-10">
         <div className="row">
           <h4 id="title">Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />

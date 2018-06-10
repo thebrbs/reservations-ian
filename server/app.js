@@ -15,5 +15,5 @@ app.get('/restaurant/:restaurant_id/:date', function(req, res) {
     res.send(data); 
   }); 
 });  
-
+ 
 module.exports = app;

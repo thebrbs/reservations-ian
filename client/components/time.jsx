@@ -18,9 +18,9 @@ const Time = (props) => {
       <select id="timeSelect" onChange={props.timeChange} value={props.time} >
         {time.map((time, id) => {
           if (time === '5:00 PM') {
-            return <option value={time} key={id}>{time}</option> 
+            return <option value={time} key={id}>{time}</option>;
           }
-            return <option key={id}>{time}</option>
+            return <option key={id}>{time}</option>;
           }
         )}
       </select>
