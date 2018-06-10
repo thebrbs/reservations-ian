@@ -18,14 +18,13 @@ class App extends React.Component {
       pickTime: "",
       clicked: false,
     }
-  }
+  }   
   componentDidMount() {
     var context = this;
     axios.get('/restaurant/1001/' + this.state.date)
       .then(function(response) {
         context.setState({
           timeSlots: response.data,
-          partySizeMax: response.data.party_size_max,
         });
       });
   }

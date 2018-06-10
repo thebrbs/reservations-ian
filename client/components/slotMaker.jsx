@@ -23,6 +23,11 @@ class SlotMaker extends React.Component {
     let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
     let j = idxOfPick + 1;
+    if (this.props.partySizeMax <= this.props.partySize) {
+      return (
+        <div className="jumbotron"></div>
+      )
+    }
     if (this.props.clicked === true && this.state.counterClick !== this.props.timeSlots) {
       for (var i = 0; i < timeObjArray.length; i++) {
         notAvail.push(timeObjArray[i].time);
@@ -40,12 +45,6 @@ class SlotMaker extends React.Component {
         timeAvail: timeAvail,
         counterClick: this.props.timeSlots,
       });
-    }
-    console.log(this.props.partySizeMax);
-    if (this.props.partySizeMax <= this.props.partySize) {
-      return (
-        <div className="jumbotron"></div>
-      )
     }
     return (
       this.state.timeAvail.map((entry, id)=> (
