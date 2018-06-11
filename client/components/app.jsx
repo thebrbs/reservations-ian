@@ -59,13 +59,13 @@ class App extends React.Component {
         <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
           <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
           <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
-          <div className="col-lg-6 col-md-6 col-xs-6 date">
+          <div id="dateCol" className="col-lg-6 col-md-6 col-xs-6 date">
             <Date date={this.state.date} dateChange={this.dateChange.bind(this)} />
           </div>
           <div className="col-lg-6 col-md-6 col-xs-6 time">
             <Time time={this.state.time} timeChange={this.timeChange.bind(this)} />
           </div>
-        </div>
+        </div> 
         <div className="buttStyle">
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>

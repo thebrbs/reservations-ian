@@ -55,10 +55,13 @@ class SlotMaker extends React.Component {
       });
     }
     return (
-      this.state.timeAvail.map((entry, id)=> (
+      <div>
+        {this.state.timeAvail.map((entry, id)=> (
           <button id="timeButt" className="btn btn-danger" value={entry} key={id}>{entry}</button>
-        )
-      )
+          )
+        )}
+        <div id="bookedToday">Booked __ times today</div>
+      </div>
     )
   }
 }

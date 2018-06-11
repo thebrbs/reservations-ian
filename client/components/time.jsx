@@ -15,6 +15,7 @@ const time = [
 const Time = (props) => { 
   return (
     <div id="time">
+      <span id="timeArrow" className="glyphicon glyphicon-chevron-down"></span>
       <select id="timeSelect" onChange={props.timeChange} value={props.time} >
         {time.map((time, id) => {
           if (time === '5:00 PM') {
