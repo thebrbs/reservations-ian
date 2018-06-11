@@ -143,8 +143,8 @@
 }
 
 #slots {
-  padding-top: 5px;
-  padding-right: 10px;
+  padding-top: 5px; 
+  padding-right: 0px;
   padding-left: 0px;
   padding-bottom: 10px;
 }
@@ -153,16 +153,18 @@
   top: 2px;
 }
 
-.jumbotron {
+#jumbotron {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
+  border-radius: 0px;
+  width: 100%;
 }
 
 #warning {
   padding-left: 10px;
-  padding-right: 0px;
+  padding-right: 10px;
 }
 #circle {
   padding-left: 0px;
@@ -174,6 +176,7 @@
 #warn {
   display: inline-block;
   padding-left: 0px;
+  padding-right: 0px;
 }
 .container .jumbotron, .container-fluid .jumbotron {
   padding-right: 0px;
