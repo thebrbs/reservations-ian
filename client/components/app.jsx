@@ -51,7 +51,7 @@ class App extends React.Component {
       date: event.target.value,
     }); 
   }
-  render () { 
+  render () {
     return (
       <div id="reserveContainer" className="col-lg-5 col-md-5 col-sm-10 col-xs-10">
           <h4 id="title">Make a reservation</h4>

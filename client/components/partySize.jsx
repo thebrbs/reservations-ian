@@ -5,7 +5,7 @@ const PartySize =(props) => {
   return (
     <div> 
       <div id="partyTitle">Party Size</div>
-        <span id='arrow' className="glyphicon glyphicon-chevron-down"></span>
+        <span id='arrowptsize' className="glyphicon glyphicon-chevron-down"></span>
         <span id="for">For</span>
         <div id="partyD">
           <select onChange={props.partyChange} className="opts" id="PartySize">
