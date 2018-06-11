@@ -17,7 +17,7 @@ class SlotMaker extends React.Component {
       timeAvail: [],
     }
   }
-  render () {
+  render () { 
     let timeAvail = [];
     let notAvail = [];
     let timeObjArray = this.props.timeSlots;
@@ -30,7 +30,7 @@ class SlotMaker extends React.Component {
             <svg id="circle" className="col-lg-1 col-md-1 col-sm-1 col-xs-1" width="20" height="50">
               <circle cx="19" cy="17" r="10" fill="rgb(51, 51, 51)" />
               <text className="glyphText" x="19" y="22" stroke="white" textAnchor="middle" >!</text>
-            </svg> 
+            </svg>   
             <div id="warn" className="col-lg-11 col-md-11 col-sm-11 col-xs-11" >Your party is too large to make an online reservation at ______. To book this restaurant, contact them directly.</div>
           </div> 
         </div> 

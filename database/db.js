@@ -22,6 +22,6 @@ let postTimeSlot = (rest_id, date, time, cb) => {
       throw error;
     }
   });
-}
+} 
  
 module.exports.grabTimeSlots = grabTimeSlots;
