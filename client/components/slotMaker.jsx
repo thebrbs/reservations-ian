@@ -10,19 +10,16 @@ const time = [
   '8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM',
   '11:00 PM'
 ];
-class SlotMaker extends React.Component { 
-  constructor (props) {
+class SlotMaker extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = {
-      timeAvail: [],
-    }
   }
-  render () { 
+  render() { 
     let timeAvail = [];
     let notAvail = [];
-    let timeObjArray = this.props.timeSlots;
+    var timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
-    let j = idxOfPick + 1; 
+    let j = idxOfPick;
     if (this.props.partySizeMax <= this.props.partySize) { 
       return (
         <div id="jumbotron" className="jumbotron">   
@@ -36,8 +33,8 @@ class SlotMaker extends React.Component {
         </div> 
       )
     }
-    if (this.props.isClicked && this.state.counterClick !== this.props.timeSlots) {
-      for (var i = 0; i < timeObjArray.length; i++) {
+    if (this.props.isClicked) {
+      for (var i = 0; i < timeObjArray.length; i++) { 
         notAvail.push(timeObjArray[i].time);
       }
       for (var i = idxOfPick; i < idxOfPick + 6; i++) {
@@ -49,14 +46,10 @@ class SlotMaker extends React.Component {
           timeAvail.unshift(time[j]);
         }
       }
-      this.setState({
-        timeAvail: timeAvail,
-        counterClick: this.props.timeSlots,
-      });
     }
     return (
       <div>
-        {this.state.timeAvail.map((entry, id)=> (
+        {timeAvail.map((entry, id)=> (
           <button id="timeButt" className="btn btn-danger" value={entry} key={id}>{entry}</button>
           )
         )}

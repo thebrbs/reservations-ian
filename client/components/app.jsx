@@ -9,47 +9,39 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: 1001, 
-      timeSlots: [],
-      partySize: 2,
+      restaurantId: 1001,
       partySizeMax: 15,
-      date: "2018-05-31",
-      time: "5:00 PM",
-      pickTime: "",
       isClicked: false,
     }
+    this.timeSlots; 
+    this.partySize;
+    this.partySizeMax;
+    this.date;
+    this.time;
   }   
   componentDidMount() {
-    axios.get('/restaurant/1001/' + this.state.date)
+    axios.get('/restaurant/1001/2018-05-31')
       .then((response) => {
-        this.setState({
-          timeSlots: response.data,
-        });
+        this.timeSlots = response.data;
       });
   }
-  findTable () {
-      axios.get(`/restaurant/${this.state.restaurantId}/${this.state.date}`)
+  findTable() {
+    axios.get(`/restaurant/${this.state.restaurantId}/${this.state.date}`)
       .then((response) => {
         this.setState({
           timeSlots: response.data,
           isClicked: true,
-        });
+        }); 
       });
   }
   partySizeChange (event) {
-    this.setState({
-      partySize: event.target.value,
-    });
+    this.partySize = event.target.value;
   }
   timeChange (event) {
-    this.setState({
-      time: event.target.value,
-    });
+    this.time = event.target.value;
   }
   dateChange (event) {
-    this.setState({
-      date: event.target.value,
-    }); 
+    this.date = event.target.value;
   }
   render () {
     return (
@@ -70,7 +62,12 @@ class App extends React.Component {
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
         <div id="slots" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <SlotMaker isClicked={this.state.isClicked} timeSlots={this.state.timeSlots} partySize={this.state.partySize} time={this.state.time} partySizeMax={this.state.partySizeMax} />
+            <SlotMaker 
+              isClicked={this.state.isClicked}
+              timeSlots={this.timeSlots} 
+              partySize={this.partySize} 
+              time={this.time}
+              partySizeMax={this.state.partySizeMax} />
         </div>
       </div>
     ) 
