@@ -13,9 +13,9 @@ const PartySize =(props) => {
             <option value={size} key={id} >&#160;&#160;&#160;&#160;&#160;{size}</option>
             )
           )}
-          </select>
+          </select> 
         </div>
-    </div>
+    </div> 
   )
 }
 

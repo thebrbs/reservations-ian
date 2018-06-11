@@ -53,27 +53,23 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div id="reserveContainer" className="col-lg-5 col-md-5 col-xs-10">
-        <div className="row">
+      <div id="reserveContainer" className="col-lg-5 col-md-5 col-sm-10 col-xs-10">
           <h4 id="title">Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />
-        </div>
-        <div className="row">
-          <div id="dateTitle" className="col-lg-5 col-md-5 col-xs-5">Date</div>
-          <div id="timeTitle" className="col-lg-5 col-md-5 col-xs-5">Time</div>        
-        </div>
-        <div className="row">
-          <div className="col-lg-5 col-md-5 col-xs-5 date">
+        <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+          <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
+          <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
+          <div className="col-lg-6 col-md-6 col-xs-6 date">
             <Date date={this.state.date} dateChange={this.dateChange.bind(this)} />
           </div>
-          <div className="col-lg-5 col-md-5 col-xs-5 time">
+          <div className="col-lg-6 col-md-6 col-xs-6 time">
             <Time time={this.state.time} timeChange={this.timeChange.bind(this)} />
           </div>
         </div>
         <div className="buttStyle">
           <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
-        <div id="slots" className="row">
+        <div id="slots" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <SlotMaker isClicked={this.state.isClicked} timeSlots={this.state.timeSlots} partySize={this.state.partySize} time={this.state.time} partySizeMax={this.state.partySizeMax} />
         </div>
       </div>
