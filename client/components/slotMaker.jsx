@@ -14,13 +14,14 @@ class SlotMaker extends React.Component {
   constructor(props) {
     super(props);
   }
-  render() { 
+  render() {
+    console.log(this.props.timeSlots)
     let timeAvail = [];
     let notAvail = [];
-    var timeObjArray = this.props.timeSlots;
+    let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
     let j = idxOfPick;
-    if (this.props.partySizeMax <= this.props.partySize) { 
+    if (this.props.timeSlots[0].party_size_max <= this.props.partySize) { 
       return (
         <div id="jumbotron" className="jumbotron">   
           <div className="row" id="warning">

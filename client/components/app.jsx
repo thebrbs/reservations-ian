@@ -10,19 +10,25 @@ class App extends React.Component {
     super(props);
     this.state = {
       restaurantId: 1001,
-      partySizeMax: 15,
+      currPartySize: 2,
       isClicked: false,
+      currTime: "6:00 PM",
+      currDate: "2018-05-31",
+      timeSlots: [{party_max_size: 1}],
+      partySize: 2,
+      time: "6:00 PM",
+      date: "2018-05-31",
     }
-    this.timeSlots; 
-    this.partySize;
-    this.partySizeMax;
-    this.date;
-    this.time;
   }   
-  componentDidMount() {
+  componentDidMount() { 
     axios.get('/restaurant/1001/2018-05-31')
       .then((response) => {
-        this.timeSlots = response.data;
+        this.setState({
+          timeSlots: response.data,
+        })
+      })
+      .catch((error) => {
+        throw(error);
       });
   }
   findTable() {
@@ -31,17 +37,28 @@ class App extends React.Component {
         this.setState({
           timeSlots: response.data,
           isClicked: true,
+          partySizeMax: this.state.currPartySizeMax,
+          partySize: this.state.currPartySize,
+          time: this.state.currTime,
+          date: this.state.currDate,
+          partySizeMax: this.state.currPartySizeMax,
         }); 
       });
   }
   partySizeChange (event) {
-    this.partySize = event.target.value;
+    this.setState({
+      currPartySize: event.target.value,
+    });
   }
   timeChange (event) {
-    this.time = event.target.value;
+    this.setState({
+      currTime: event.target.value,
+    })
   }
   dateChange (event) {
-    this.date = event.target.value;
+    this.setState({
+      currDate: event.target.value,
+    });
   }
   render () {
     return (
@@ -52,10 +69,10 @@ class App extends React.Component {
           <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
           <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
           <div id="dateCol" className="col-lg-6 col-md-6 col-xs-6 date">
-            <Date date={this.state.date} dateChange={this.dateChange.bind(this)} />
+            <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
           </div>
           <div className="col-lg-6 col-md-6 col-xs-6 time">
-            <Time time={this.state.time} timeChange={this.timeChange.bind(this)} />
+            <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
           </div>
         </div> 
         <div className="buttStyle">
@@ -64,10 +81,10 @@ class App extends React.Component {
         <div id="slots" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <SlotMaker 
               isClicked={this.state.isClicked}
-              timeSlots={this.timeSlots} 
-              partySize={this.partySize} 
-              time={this.time}
-              partySizeMax={this.state.partySizeMax} />
+              timeSlots={this.state.timeSlots} 
+              partySize={this.state.partySize} 
+              time={this.state.time}
+            />
         </div>
       </div>
     ) 
