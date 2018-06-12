@@ -12,18 +12,18 @@ class App extends React.Component {
       restaurantId: 1001,
       currPartySize: 2,
       isClicked: false,
-      currTime: "6:00 PM",
+      currTime: "6:00 PM", 
       currDate: "2018-06-01",
       currTimeSlots: [{party_max_size: 1}],
       timeSlots: [{party_max_size: 1}],
       partySize: 2,
-      time: "6:00 PM",
-      date: "2018-06-01",
+      time: "6:00 PM", 
+      date: "2018-06-01", 
     } 
   }   
   componentDidMount() { 
     axios.get(`/restaurant/1001/${this.state.currDate}`)
-      .then((response) => {
+      .then((response) => { 
         this.setState({
           currTimeSlots: response.data,
         })
@@ -63,8 +63,8 @@ class App extends React.Component {
   render () {
     return (
       <div id="reserveContainer" className="col-lg-5 col-md-5 col-sm-10 col-xs-10">
-          <h4 id="title">Make a reservation</h4>
-          <PartySize partyChange={this.partySizeChange.bind(this)} />
+        <h4 id="title">Make a reservation</h4>
+        <PartySize partyChange={this.partySizeChange.bind(this)} />
         <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
           <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
           <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
