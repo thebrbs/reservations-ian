@@ -9,7 +9,7 @@ const time = [
   '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM',
   '8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM',
   '11:00 PM'
-];
+]; 
 class SlotMaker extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class SlotMaker extends React.Component {
     let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
     let j = idxOfPick;
-    if (this.props.timeSlots[0].party_size_max <= this.props.partySize) { 
+    if (this.props.timeSlots.length !== 0 && this.props.timeSlots[0].party_size_max <= this.props.partySize) { 
       return (
         <div id="jumbotron" className="jumbotron">   
           <div className="row" id="warning">
@@ -30,7 +30,7 @@ class SlotMaker extends React.Component {
             </svg>   
             <div id="warn" className="col-lg-11 col-md-11 col-sm-11 col-xs-11" >Your party is too large to make an online reservation at ______. To book this restaurant, contact them directly.</div>
           </div> 
-        </div> 
+        </div>   
       )
     }
     if (this.props.isClicked) {

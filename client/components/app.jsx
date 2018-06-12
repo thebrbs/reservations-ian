@@ -37,7 +37,6 @@ class App extends React.Component {
         this.setState({
           timeSlots: response.data,
           isClicked: true,
-          partySizeMax: this.state.currPartySizeMax,
           partySize: this.state.currPartySize,
           time: this.state.currTime,
           date: this.state.currDate,
