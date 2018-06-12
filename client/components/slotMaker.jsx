@@ -15,7 +15,6 @@ class SlotMaker extends React.Component {
     super(props);
   }
   render() {
-    console.log(this.props.timeSlots)
     let timeAvail = [];
     let notAvail = [];
     let timeObjArray = this.props.timeSlots;

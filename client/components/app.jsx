@@ -18,7 +18,7 @@ class App extends React.Component {
       partySize: 2,
       time: "6:00 PM",
       date: "2018-05-31",
-    }
+    } 
   }   
   componentDidMount() { 
     axios.get('/restaurant/1001/2018-05-31')
