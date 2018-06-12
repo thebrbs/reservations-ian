@@ -8,7 +8,7 @@ const PartySize =(props) => {
         <span id='arrowptsize' className="glyphicon glyphicon-chevron-down"></span>
         <span id="for">For</span>
         <div id="partyD">
-          <select onChange={props.partyChange} className="opts" id="PartySize">
+          <select onChange={props.partyChange} className="partySelect" id="PartySize">
           {partySize.map((size, id) => (
             <option value={size} key={id} >&#160;&#160;&#160;&#160;&#160;{size}</option>
             )

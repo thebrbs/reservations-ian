@@ -13,18 +13,19 @@ class App extends React.Component {
       currPartySize: 2,
       isClicked: false,
       currTime: "6:00 PM",
-      currDate: "2018-05-31",
+      currDate: "2018-06-01",
+      currTimeSlots: [{party_max_size: 1}],
       timeSlots: [{party_max_size: 1}],
       partySize: 2,
       time: "6:00 PM",
-      date: "2018-05-31",
+      date: "2018-06-01",
     } 
   }   
   componentDidMount() { 
-    axios.get('/restaurant/1001/2018-05-31')
+    axios.get(`/restaurant/1001/${this.state.currDate}`)
       .then((response) => {
         this.setState({
-          timeSlots: response.data,
+          currTimeSlots: response.data,
         })
       })
       .catch((error) => {
@@ -32,13 +33,13 @@ class App extends React.Component {
       });
   }
   findTable() {
-    axios.get(`/restaurant/${this.state.restaurantId}/${this.state.date}`)
+    axios.get(`/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
       .then((response) => {
         this.setState({
           timeSlots: response.data,
           isClicked: true,
           partySize: this.state.currPartySize,
-          time: this.state.currTime,
+          time: this.state.currTime, 
           date: this.state.currDate,
           partySizeMax: this.state.currPartySizeMax,
         }); 

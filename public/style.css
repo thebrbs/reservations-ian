@@ -9,7 +9,7 @@
   font-family: "Arial Black", Gadget, sans-serif;
 }
 
-.opts {
+.partySelect {
   width: 95%;
   background: rgba(0,0,0,0);
   color: solid black;
@@ -38,6 +38,14 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #dcd6d6
 }
+#calendar:hover {
+  border-bottom: 2px solid red;
+  padding-bottom: 9px;
+}
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
 #dateCol {
   padding-right: 5px;
 }
@@ -58,6 +66,10 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #dcd6d6;
 }
+#timeSelect:hover {
+  border-bottom: 2px solid rgb(255, 0, 0);
+  padding-bottom: 9px;
+}
 
 #time {
   margin-top: 0px;
@@ -72,6 +84,10 @@
   padding-bottom: 10px;
   margin-right: 0px;
   margin-left: 0px;
+}
+#partyD:hover {
+  border-bottom: 2px solid red;
+  padding-bottom: 9px;
 }
 
 #for {

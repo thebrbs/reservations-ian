@@ -12,6 +12,7 @@ let grabTimeSlots = (rest_id, date, cb) => {
     if (error) {
       throw error;
     }
+    console.log(results);
     cb(error, results); 
   });
 }
