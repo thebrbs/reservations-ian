@@ -65,7 +65,7 @@ class App extends React.Component {
       <div id="reserveContainer" className="col-lg-5 col-md-5 col-sm-10 col-xs-10">
         <h4 id="title">Make a reservation</h4>
         <PartySize partyChange={this.partySizeChange.bind(this)} />
-        <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+        <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12" > 
           <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
           <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
           <div id="dateCol" className="col-lg-6 col-md-6 col-xs-6 date">
