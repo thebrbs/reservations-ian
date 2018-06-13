@@ -15,10 +15,10 @@ class SlotMaker extends React.Component {
     super(props);
   }
   render() {
-    let timeAvail = [];
+    const timeAvail = [];
     let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
-    let j = idxOfPick;
+    let timeSelected = idxOfPick;
     if (this.props.timeSlots.length !== 0 && this.props.timeSlots[0].party_size_max <= this.props.partySize) { 
       return (
         <div id="jumbotron" className="jumbotron">   
@@ -40,10 +40,10 @@ class SlotMaker extends React.Component {
         if (!notAvail.includes(time[i]) && time[i] !== undefined) {
           timeAvail.push(time[i]);
         }
-        if (!notAvail.includes(time[j]) && time[j] !== undefined) {
-          timeAvail.unshift(time[j]);
+        if (!notAvail.includes(time[timeSelected]) && time[timeSelected] !== undefined) {
+          timeAvail.unshift(time[timeSelected]);
         }
-        j--;
+        timeSelected--;
       }
     }
     return (
