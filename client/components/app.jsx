@@ -6,11 +6,12 @@ import Time from './time.jsx';
 import SlotMaker from './slotMaker.jsx';
 import app from '../app.css';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: 1001,
+      restaurantId: this.props.match.params.restaurant_id,
       currPartySize: 2,
       isClicked: false,
       currTime: "6:00 PM", 
@@ -23,11 +24,11 @@ class App extends React.Component {
     } 
   }   
   componentDidMount() { 
-    axios.get(`/restaurant/1001/${this.state.currDate}`)
+    axios.get(`/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
       .then((response) => { 
         this.setState({
           currTimeSlots: response.data,
-        })
+        }) 
       })
       .catch((error) => {
         throw(error);
