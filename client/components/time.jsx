@@ -1,4 +1,5 @@
 import React from 'react';
+import timecss from './time.css';
 
 const time = [
   '12:00 AM', '12:30 AM', '1:00 AM', '2:00 AM', '2:30 AM',
@@ -14,9 +15,9 @@ const time = [
 ];
 const Time = (props) => { 
   return (
-    <div id="time">
-      <span id="timeArrow" className="glyphicon glyphicon-chevron-down"></span>
-      <select id="timeSelect" onChange={props.timeChange} value={props.time} >
+    <div className={`${timecss.time}`}>
+      <span className={`${timecss.timeArrow} glyphicon glyphicon-chevron-down`}></span>
+      <select className={`${timecss.timeSelect}`} onChange={props.timeChange} value={props.time} >
         {time.map((time, id) => {
           if (time === '5:00 PM') {
             return <option value={time} key={id}>{time}</option>;
