@@ -15,6 +15,7 @@ class SlotMaker extends React.Component {
     super(props);
   }
   render() {
+    // console.log(this.props);
     const timeAvail = [];
     let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
