@@ -214,15 +214,12 @@ input[type=date]::-webkit-inner-spin-button {
   padding-left: 0px;
   padding-right: 0px;
 }
-.container .jumbotron, .container-fluid .jumbotron {
+.container .container-fluid {
   padding-right: 0px;
   padding-left: 0px;
 }
 
-#dateTimeContain {
-  padding-left: 0px;
-  padding-right: 0px;
-}
+
 
 #bookedToday {
   font-weight: bold;

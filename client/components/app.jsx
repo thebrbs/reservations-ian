@@ -4,6 +4,7 @@ import PartySize from './partySize.jsx';
 import Date from './date.jsx';
 import Time from './time.jsx';
 import SlotMaker from './slotMaker.jsx';
+import app from '../app.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -62,23 +63,23 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div id="reserveContainer" className="col-lg-5 col-md-5 col-sm-10 col-xs-10">
-        <h4 id="title">Make a reservation</h4>
+      <div className={`col-lg-5 col-md-5 col-sm-10 col-xs-10 ${app.reserveContainer}`}>
+        <h4 className={app.title} >Make a reservation</h4>
         <PartySize partyChange={this.partySizeChange.bind(this)} />
-        <div id="dateTimeContain" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12" > 
-          <div id="dateTitle" className="col-lg-6 col-md-6 col-xs-6">Date</div>
-          <div id="timeTitle" className="col-lg-6 col-md-6 col-xs-6">Time</div>     
-          <div id="dateCol" className="col-lg-6 col-md-6 col-xs-6 date">
+        <div className={`${app.container} ${app.dateTimeContain} col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
+          <div className={`${app.dateTitle} col-lg-6 col-md-6 col-xs-6`}>Date</div>
+          <div className={`${app.timeTitle} col-lg-6 col-md-6 col-xs-6`}>Time</div>     
+          <div className={`${app.dateCol} col-lg-6 col-md-6 col-xs-6 date`}>
             <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
           </div>
-          <div className="col-lg-6 col-md-6 col-xs-6 time">
+          <div className={`col-lg-6 col-md-6 col-xs-6 ${app.timeCol}`}>
             <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
           </div>
         </div> 
-        <div className="buttStyle">
-          <button className="btn btn-danger" id="findButt" onClick={this.findTable.bind(this)} >Find a Table</button>
+        <div className={`${app.buttStyle}`}>
+          <button className={`btn btn-danger ${app.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
         </div>
-        <div id="slots" className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div className={`${app.container} ${app.slots} col-lg-12 col-md-12 col-sm-12 col-xs-12`}>
             <SlotMaker 
               isClicked={this.state.isClicked}
               timeSlots={this.state.timeSlots} 

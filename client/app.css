@@ -1,0 +1,70 @@
+.reserveContainer {
+  border: 1px solid #dcd6d6;
+}
+
+.title {
+  padding-bottom: 10px;
+	border-bottom: 1px solid #dcd6d6;
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.container .container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.dateTimeContain {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.dateTitle{ 
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.timeTitle {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.dateCol {
+  padding-right: 5px;
+}
+
+.timeCol {
+  padding-top: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.buttStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.findButt {
+  width: 288px;
+  height: 48px;
+  background-color: #da3743;
+  border-radius: 0;
+}
+
+.findButt:hover {
+  background: #b7222d;
+}
+
+.slots {
+  padding-top: 10px; 
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 10px;
+}
