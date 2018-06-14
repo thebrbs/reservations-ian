@@ -50,15 +50,28 @@ class SlotMaker extends React.Component {
         timeSelected--;
       }
     }
-    return (
-      <div>
-        {timeAvail.map((entry, id)=> (
-          <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
-          )
-        )}
-        <div className={`${styles.bookedToday}`}>Booked __ times today</div>
-      </div>
-    )
+    if (timeAvail.length > 0) {
+      return (
+        <div>
+          {timeAvail.map((entry, id)=> (
+            <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
+            )
+          )}
+          <div className={`${styles.bookedToday}`}>Booked 5 times today</div>
+          <div className={`${styles.bookedTodayNum}`}>{`You're in luck! We still have ${timeAvail.length} timeslots left`}</div>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          {timeAvail.map((entry, id)=> (
+            <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
+            )
+          )}
+          <div className={`${styles.bookedToday}`}>Booked 5 times today</div>
+        </div>
+      )
+    }
   }
 }
 

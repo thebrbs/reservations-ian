@@ -64,30 +64,34 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div className={`col-lg-5 col-md-5 col-sm-10 col-xs-10 ${styles.reserveContainer}`}>
-        <h4 className={styles.title} >Make a reservation</h4>
-        <PartySize partyChange={this.partySizeChange.bind(this)} />
-        <div className={`${styles.container} ${styles.dateTimeContain} col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
-          <div className={`${styles.dateTitle} col-lg-6 col-md-6 col-xs-6`}>Date</div>
-          <div className={`${styles.timeTitle} col-lg-6 col-md-6 col-xs-6`}>Time</div>     
-          <div className={`${styles.dateCol} col-lg-6 col-md-6 col-xs-6 date`}>
-            <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
+      <div>
+        <div className={`col-lg-5 col-md-5 col-sm-10 col-xs-10 ${styles.reserveContainer}`}>
+          <h4 className={styles.title} >Make a reservation</h4>
+          <PartySize partyChange={this.partySizeChange.bind(this)} />
+          <div className={`${styles.container} ${styles.dateTimeContain} col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
+            <div className={`${styles.dateTitle} col-lg-6 col-md-6 col-xs-6`}>Date</div>
+            <div className={`${styles.timeTitle} col-lg-6 col-md-6 col-xs-6`}>Time</div>     
+            <div className={`${styles.dateCol} col-lg-6 col-md-6 col-xs-6 date`}>
+              <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
+            </div>
+            <div className={`col-lg-6 col-md-6 col-xs-6 ${styles.timeCol}`}>
+              <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
+            </div>
+          </div> 
+          <div className={`${styles.buttStyle}`}>
+            <button className={`btn btn-danger ${styles.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
           </div>
-          <div className={`col-lg-6 col-md-6 col-xs-6 ${styles.timeCol}`}>
-            <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
+          <div className={`${styles.container} ${styles.slots} col-lg-12 col-md-12 col-sm-12 col-xs-12`}>
+              <SlotMaker 
+                isClicked={this.state.isClicked}
+                timeSlots={this.state.timeSlots} 
+                partySize={this.state.partySize} 
+                time={this.state.time}
+              />
           </div>
-        </div> 
-        <div className={`${styles.buttStyle}`}>
-          <button className={`btn btn-danger ${styles.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
+          <button className={styles.saveButt}>Save this Restaurant</button>
         </div>
-        <div className={`${styles.container} ${styles.slots} col-lg-12 col-md-12 col-sm-12 col-xs-12`}>
-            <SlotMaker 
-              isClicked={this.state.isClicked}
-              timeSlots={this.state.timeSlots} 
-              partySize={this.state.partySize} 
-              time={this.state.time}
-            />
-        </div>
+        
       </div>
     ) 
   }
