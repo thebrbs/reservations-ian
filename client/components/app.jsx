@@ -21,10 +21,10 @@ class App extends React.Component {
       partySize: 2,
       time: "6:00 PM", 
       date: "2018-06-01", 
-    } 
+    }   
   }   
-  componentDidMount() { 
-    axios.get(`reservations/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
+  componentDidMount() {   
+    axios.get(`/reservations/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
       .then((response) => { 
         this.setState({
           currTimeSlots: response.data,
@@ -32,10 +32,10 @@ class App extends React.Component {
       })
       .catch((error) => {
         throw(error);
-      });
+      }); 
   }
   findTable() {
-    axios.get(`reservations/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
+    axios.get(`/reservations/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
       .then((response) => {
         this.setState({
           timeSlots: response.data,
