@@ -21,14 +21,14 @@ class App extends React.Component {
       partySize: 2,
       time: "6:00 PM", 
       date: "2018-06-01", 
-    }   
+    }
   }   
-  componentDidMount() {   
+  componentDidMount() {
     axios.get(`/reservations/restaurant/${this.state.restaurantId}/${this.state.currDate}`)
-      .then((response) => { 
+      .then((response) => {
         this.setState({
           currTimeSlots: response.data,
-        }); 
+        });
       })
       .catch((error) => {
         throw(error);
@@ -78,7 +78,7 @@ class App extends React.Component {
               <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
             </div>
           </div> 
-          <div className={`${styles.buttStyle}`}>
+          <div className={styles.buttStyle}>
             <button className={`btn btn-danger ${styles.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
           </div>
           <div className={`${styles.container} ${styles.slots} col-lg-12 col-md-12 col-sm-12 col-xs-12`}>
