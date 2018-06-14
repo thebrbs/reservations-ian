@@ -65,7 +65,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <div className={`col-lg-5 col-md-5 col-sm-10 col-xs-10 ${styles.reserveContainer}`}>
+        <div className={`col-lg-3 col-md-10 col-sm-10 col-xs-10 ${styles.reserveContainer}`}>
           <h4 className={styles.title} >Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />
           <div className={`${styles.container} ${styles.dateTimeContain} col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
