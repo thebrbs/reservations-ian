@@ -69,3 +69,17 @@
   padding-left: 0px;
   padding-bottom: 10px;
 }
+
+.saveButt {
+  display:none;
+  width: 288px;
+  height: 48px;
+  border-radius: 0;
+  position: relative;
+  top: 50px;
+  margin-left: 40%;
+  border: 1px solid gray;
+}
+.saveButt:hover {
+  border-color: #b7222d;
+}

@@ -34,6 +34,11 @@
   background: #b7222d;
 }
 .bookedToday {
+  padding-top: 20px;
   font-weight: bold;
-  text-align: center;
+  padding-right: 10px;
+}
+.bookedTodayNum {
+  font-weight: bold;
+  padding-right: 10px;
 }
