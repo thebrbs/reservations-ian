@@ -11,3 +11,7 @@
   border-bottom: 2px solid red;
   padding-bottom: 9px;
 }
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}

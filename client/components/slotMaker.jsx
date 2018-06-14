@@ -57,8 +57,8 @@ class SlotMaker extends React.Component {
             <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
             )
           )}
-          <div className={`${styles.bookedToday}`}>Booked 5 times today</div>
-          <div className={`${styles.bookedTodayNum}`}>{`You're in luck! We still have ${timeAvail.length} timeslots left`}</div>
+          <div className={styles.bookedToday}>Booked 5 times today</div>
+          <div className={styles.bookedTodayNum}>{`You're in luck! We still have ${timeAvail.length} timeslots left`}</div>
         </div>
       )
     } else {
@@ -68,7 +68,7 @@ class SlotMaker extends React.Component {
             <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
             )
           )}
-          <div className={`${styles.bookedToday}`}>Booked 5 times today</div>
+          <div className={styles.bookedToday}>Booked 5 times today</div>
         </div>
       )
     }
