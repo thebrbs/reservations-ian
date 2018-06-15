@@ -4,6 +4,7 @@ Injector.js loads data into the database for testing.
 
 HOW TO START:
 Start mysql server: type mysql.server start
+Run mysql -u root < schema.sql
 Run injector.js from root directory. type in terminal: node database/injector.js
 Now type npm run react-dev
 Followed by npm start
