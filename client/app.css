@@ -5,6 +5,8 @@
 }
 
 .title {
+  margin-top: 2.33px;
+  padding-top: 10px;
   padding-bottom: 10px;
 	border-bottom: 1px solid #dcd6d6;
   text-align: center;

@@ -33,6 +33,7 @@
 #timeButtid {
   outline: none;
   box-shadow: none;   
+  height: 35px;
 }
 
 .timeButt:hover {
