@@ -22,7 +22,7 @@
 .dateTitle{ 
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 0px;
+  padding-left: 15px;
   padding-right: 0px;
 }
 
@@ -35,13 +35,13 @@
 
 .dateCol {
   padding-right: 5px;
-  padding-left: 0px;
+  padding-left: 15px;
 }
 
 .timeCol {
   padding-top: 5px;
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: 15px;
 }
 
 .buttStyle {
@@ -57,12 +57,18 @@
   height: 48px;
   background-color: #da3743;
   border-radius: 0;
+  outline:none;
+}
+#findButtonid {
+  outline:none;
 }
 
 .findButt:hover {
   background: #b7222d;
 }
-
+button:focus {
+  outline:0;
+}
 .slots {
   padding-top: 10px; 
   padding-right: 0px;
@@ -82,4 +88,9 @@
 }
 .saveButt:hover {
   border-color: #b7222d;
+}
+
+.arrowDown {
+  position:relative;
+  top: 20px;
 }

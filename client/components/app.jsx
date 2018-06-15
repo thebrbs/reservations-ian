@@ -65,21 +65,25 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <div className={`col-lg-3 col-md-10 col-sm-10 col-xs-10 ${styles.reserveContainer}`}>
+        <div className={`col-lg-4 col-md-10 col-sm-10 col-xs-10 container ${styles.reserveContainer} sticky-top`}>
           <h4 className={styles.title} >Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />
-          <div className={`${styles.container} ${styles.dateTimeContain} col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
-            <div className={`${styles.dateTitle} col-lg-6 col-md-6 col-xs-6`}>Date</div>
-            <div className={`${styles.timeTitle} col-lg-6 col-md-6 col-xs-6`}>Time</div>     
-            <div className={`${styles.dateCol} col-lg-6 col-md-6 col-xs-6 date`}>
-              <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
+          <div className={`${styles.container} ${styles.dateTimeContain} container col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
+            <div className="row">
+              <div className={`${styles.dateTitle} col-lg-6 col-md-6 col-sm-6 col-xs-6`}>Date</div>
+              <div className={`${styles.timeTitle} col-lg-6 col-md-6 col-sm-6 col-xs-6`}>Time</div>     
             </div>
-            <div className={`col-lg-6 col-md-6 col-xs-6 ${styles.timeCol}`}>
-              <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
+            <div className="row"> 
+              <div className={`${styles.dateCol} col-lg-6 col-md-6 col-sm-6 col-xs-6 date`}>
+                <Date date={this.state.currDate} dateChange={this.dateChange.bind(this)} />
+              </div>
+              <div className={`col-lg-6 col-md-6 col-sm-6 col-xs-6 ${styles.timeCol}`}>
+                <Time time={this.state.currTime} timeChange={this.timeChange.bind(this)} />
+              </div>
             </div>
           </div> 
           <div className={styles.buttStyle}>
-            <button className={`btn btn-danger ${styles.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
+            <button id={styles.findButtonid} className={`btn btn-danger ${styles.findButt}`} onClick={this.findTable.bind(this)} >Find a Table</button>
           </div>
           <div className={`${styles.container} ${styles.slots} col-lg-12 col-md-12 col-sm-12 col-xs-12`}>
               <SlotMaker 

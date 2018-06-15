@@ -16,7 +16,7 @@
 }
 .timeSelect {
   position: relative;
-  top: -20px;
+  top: -24px;
   border: none;
   background-color: white;
   margin-top: 0px;
@@ -24,6 +24,7 @@
   margin-right: 0px;
   margin-left: 0px;
   padding-top: 0px;
+  padding-right: 0px;
   width: 100%;
   background: rgba(0,0,0,0);
   -webkit-appearance: none;
