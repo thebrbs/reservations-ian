@@ -21,13 +21,18 @@
   padding-right: 0px;
 }
 .circle {
-  display: inline-block;
+  display: inline-block; 
 }    
 .timeButt {
   background-color: #da3743;
   border-radius: 0;
   margin-right: 8px;
   margin-top: 8px;
+  box-shadow: none;
+}
+#timeButtid {
+  outline: none;
+  box-shadow: none;   
 }
 
 .timeButt:hover {

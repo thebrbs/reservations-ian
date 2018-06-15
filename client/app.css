@@ -61,14 +61,14 @@
 }
 #findButtonid {
   outline:none;
+  box-shadow: none;
 }
 
 .findButt:hover {
   background: #b7222d;
 }
-button:focus {
-  outline:0;
-}
+
+
 .slots {
   padding-top: 10px; 
   padding-right: 0px;

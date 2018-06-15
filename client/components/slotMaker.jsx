@@ -16,6 +16,7 @@ class SlotMaker extends React.Component {
     super(props);
   }
   render() {
+    console.log(styles.timeButtid)
     const timeAvail = [];
     let timeObjArray = this.props.timeSlots;
     let idxOfPick = time.findIndex(pick => pick === this.props.time);
@@ -54,7 +55,7 @@ class SlotMaker extends React.Component {
       return (
         <div>
           {timeAvail.map((entry, id)=> (
-            <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
+            <button id={styles.timeButtid} className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
             )
           )}
           <div className={styles.bookedToday}>Booked 5 times today</div>
@@ -65,7 +66,7 @@ class SlotMaker extends React.Component {
       return (
         <div>
           {timeAvail.map((entry, id)=> (
-            <button className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
+            <button id={styles.timeButtid} className={`${styles.timeButt} btn btn-danger`} value={entry} key={id}>{entry}</button>
             )
           )}
           <div className={styles.bookedToday}>Booked 5 times today</div>
