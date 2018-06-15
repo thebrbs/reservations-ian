@@ -64,8 +64,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div>
-        <div className={`col-lg-4 col-md-10 col-sm-10 col-xs-10 container ${styles.reserveContainer} sticky-top`}>
+        <div className={`sticky-top col-lg-4 col-md-10 col-sm-10 col-xs-10 container  ${styles.reserveContainer} `}>
           <h4 className={styles.title} >Make a reservation</h4>
           <PartySize partyChange={this.partySizeChange.bind(this)} />
           <div className={`${styles.container} ${styles.dateTimeContain} container col-lg-12 col-md-12 col-sm-12 col-xs-12`} > 
@@ -95,8 +94,6 @@ class App extends React.Component {
           </div>
           <button className={styles.saveButt}>Save this Restaurant</button>
         </div>
-        
-      </div>
     ) 
   }
 }
