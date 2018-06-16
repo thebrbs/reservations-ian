@@ -1,11 +1,11 @@
 var sample = require('./exampleData.js');
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	database: 'global_bookings',
-});
+// var connection = mysql.createConnection({
+// 	host: 'localhost',
+// 	user: 'root',
+// 	database: 'global_bookings',
+// });
 var randomNum = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -22,10 +22,11 @@ var time =
 ];
 var q = 'INSERT INTO bookings (party_size, date, party_size_max, time, restaurant_id) VALUES (?, ?, ?, ?, ?)';
 for (var i = 0; i < sample.data.length; i++) {
-	connection.query(q, [sample.data[i].partySize, sample.data[i].date, randomNum(5,15), time[randomNum(0,35)], randomNum(1001,1100)], function(err, results) {
-		if (err) {
-			console.log("ERR entry " + i + " with " + sample.data[i].partySize, sample.data[i].date, err);
-		}
-	});
+  console.log(`INSERT INTO bookings (party_size, date, party_size_max, time, restaurant_id) VALUES (${sample.data[i].partySize}, '${sample.data[i].date}', ${randomNum(5,15)}, '${time[randomNum(0,35)]}', ${randomNum(1001,1100)});`)
+	// connection.query(q, [sample.data[i].partySize, sample.data[i].date, randomNum(5,15), time[randomNum(0,35)], randomNum(1001,1100)], function(err, results) {
+	// 	if (err) {
+	// 		console.log("ERR entry " + i + " with " + sample.data[i].partySize, sample.data[i].date, err);
+	// 	}
+	// });
 }
-connection.close();
+// connection.close();
