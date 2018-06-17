@@ -3,3 +3,4 @@ public/dist/reservationsBundle.js
 database/db.js
 database/exampleData.js
 database/injector.js
+database/config.js
