@@ -1,15 +1,16 @@
 const mysql = require('mysql');
+const key = require('./config.js');
 
 let connection = mysql.createConnection({
-  host: process.env.RDS_HOSTNAME,
-  user: process.env.RDS_USERNAME,
-  database: process.env.RDS_DB_NAME,
-  password: process.env.RDS_PASSWORD,
-  port: process.env.RDS_PORT,
+  host: key.endpoint,
+  user: key.user,
+  database: key.database,
+  password: key.password,
+  port: key.rdsport,
 });
 
 let grabTimeSlots = (rest_id, date, cb) => {
-  let q = 'SELECT * FROM bookings WHERE (restaurant_id = ' + rest_id + ' && date = ' + JSON.stringify(date) + ');';
+  let q = 'SELECT * FROM bookings WHERE (restaurant_id = ' + rest_id + ' && date = ' + JSON.stringify(date) + ')';
   connection.query(q, function(error, results, fields) {
     if (error) {
       throw error;
