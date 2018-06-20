@@ -18,9 +18,9 @@ app.get('/restaurant/:restaurant_id/:date', function(req, res) {
 app.post('/restaurant/:restaurant_id/:date/:time', function(req, res) {
   db.addTimeSlot(req.params.restaurant_id, req.params.date, req.params.time, function(error, data) {
     if (error) {
-      res.sendStatus(500)
+      res.sendStatus(500);
     } else {
-      res.status(201)
+      res.sendStatus(201);
     }
   })
 })
@@ -28,9 +28,9 @@ app.post('/restaurant/:restaurant_id/:date/:time', function(req, res) {
 app.put('/restaurant/:restaurant_id/:date', function(req, res) {
   db.updateTimeSlot(req.params.restaurant_id, req.params.date, function(error, data) {
     if (error) {
-      res.sendStatus(400)
+      res.sendStatus(400);
     } else {
-      res.sendStatus(202)
+      res.sendStatus(202);
     }
   })
 })
@@ -38,9 +38,9 @@ app.put('/restaurant/:restaurant_id/:date', function(req, res) {
 app.delete('/restaurant/:restaurant_id/:date/:time', function(req, res) {
   db.deleteTimeSlot(req.params.restaurant_id, req.params.date, req.params.time, function(error, data) {
     if (error) {
-      res.sendStatus(400)
+      res.sendStatus(400);
     } else {
-      res.sendStatus(204)
+      res.sendStatus(204);
     }
   })
 })
