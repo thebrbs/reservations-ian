@@ -1,28 +1,30 @@
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username varchar(20),
-    phoneNum int
+    username varchar(30),
+    actual_name varchar(40),
+    email varchar(40),
+    phonenumber varchar(15)
 ),
 
 CREATE TABLE IF NOT EXISTS restaurants (
     id SERIAL PRIMARY KEY,
-    [name] varchar(30),
-    [open] timestamp(0),
-    [close] timestamp(0)
+    restaurant_name varchar(30),
+    restaurant_open varchar(5),
+    restaurant_close varchar(5)
 ),
 
 CREATE TABLE IF NOT EXISTS individualTable (
-    id SERIAL PRIMARY KEY,\
-    size tinyint,
-    r.id REFERENCES restaurants (id)
+    id SERIAL PRIMARY KEY,
+    size int,
+    restaurant_id int REFERENCES restaurants (id)
 ),
 
 CREATE TABLE IF NOT EXISTS bookings (
     id SERIAL PRIMARY KEY,
-    u.id REFERENCES users (id),
-    r.id REFERENCES restaurants (id),
-    t.id REFERENCES individualTable (id),
-    partySize tinyint,
+    user_id int REFERENCES users (id) ON DELETE RESTRICT,
+    restaurant_id int REFERENCES restaurants (id) ON DELETE RESTRICT,
+    table_id int REFERENCES individualTable (id) ON DELETE RESTRICT,
+    partySize int,
     notes varchar(500),
-    [date] timestamp(0)
+    bookDate varchar(25)
 )
