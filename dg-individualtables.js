@@ -11,7 +11,7 @@ function getRandomIntInclusive(min, max) {
 
 const generateIndivTables = function(writer) {
   let i = 0;
-  writer.write("id|size|restaurant_id\n");
+  writer.write("size|restaurant_id\n");
 
    const write = () => {
       
@@ -19,10 +19,10 @@ const generateIndivTables = function(writer) {
     do {
       i++;
       if (i === 100000001) {
-        writer.write(`${i}|${getRandomIntInclusive(2,16)}|${getRandomIntInclusive(1,10000000)}`);
+        writer.write(`${getRandomIntInclusive(2,16)}|${getRandomIntInclusive(1,10000000)}`);
         writer.end();
       } else {
-        ok = writer.write(`${i}|${getRandomIntInclusive(2,16)}|${getRandomIntInclusive(1,10000000)}\n`);
+        ok = writer.write(`${getRandomIntInclusive(2,16)}|${getRandomIntInclusive(1,10000000)}\n`);
       }
       
     } while (i < 100000001 && ok);

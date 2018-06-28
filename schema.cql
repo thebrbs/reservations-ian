@@ -6,16 +6,38 @@ CREATE KEYSPACE IF NOT EXISTS booking
 
 USE booking;
 
+rest_id|book_date|individualTableId|id|userName|userActualName|email|phoneNumber|partySize|notes|book_time
+
+
 CREATE TABLE IF NOT EXISTS bookings (
-  restaurantName text,
-  individualTableId int,
+  rest_id text,
+  book_date text,
+  book_time text,
+  email text,
   id int,
+  individualtableid int,
+  userName text,
+  userActualName text,
+  
+  phoneNumber text,
+  partySize int,
+  notes text,
+  
+  PRIMARY KEY (rest_id, book_date)
+);
+
+
+TEST TABLE
+CREATE TABLE IF NOT EXISTS bookings (
+  rest_id text,
+  book_date text,
+  book_time text,
+  tableid int,
   userName text,
   userActualName text,
   email text,
-  phoneNumber int,
+  phoneNumber text,
   partySize int,
   notes text,
-  bookDate text,
-  PRIMARY KEY (restaurantName, bookDate)
+  PRIMARY KEY (rest_id, book_date, book_time, tableid)
 );

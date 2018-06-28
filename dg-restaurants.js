@@ -12,7 +12,7 @@ function getRandomIntInclusive(min, max) {
 
 const generateRestaurants = function(writer) {
   let i = 0;
-  writer.write("id|restaurant_name|restaurant_open|restaurant_close\n");
+  writer.write("restaurant_name|restaurant_open|restaurant_close\n");
 
    const write = () => {
       
@@ -20,10 +20,10 @@ const generateRestaurants = function(writer) {
     do {
       i++;
       if (i === 0) {
-        writer.write(`${i}|${faker.company.companyName()}|${getRandomIntInclusive(6,12).toString().padStart(2,"0")}:00:00|${getRandomIntInclusive(13,23)}:00:00`);
+        writer.write(`${faker.company.companyName()}|${getRandomIntInclusive(6,12).toString().padStart(2,"0")}:00:00|${getRandomIntInclusive(13,23)}:00:00`);
         writer.end();
       } else {
-        ok = writer.write(`${i}|${faker.company.companyName()}|${getRandomIntInclusive(6,12).toString().padStart(2,"0")}:00:00|${getRandomIntInclusive(13,23)}:00:00\n`);
+        ok = writer.write(`${faker.company.companyName()}|${getRandomIntInclusive(6,12).toString().padStart(2,"0")}:00:00|${getRandomIntInclusive(13,23)}:00:00\n`);
       }
       
     } while (i < 10000000 && ok);
